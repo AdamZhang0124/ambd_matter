@@ -10,7 +10,7 @@ include $(MAKE_INCLUDE_GEN)
 #*****************************************************************************#
 DIR = $(BASEDIR)/component/common/application/matter
 ATCMDDIR = $(BASEDIR)/component/common/application/matter/common/atcmd
-BTDIR = $(BASEDIR)/component/common/application/matter/bluetooth/bt_matter_adapter
+BTDIR = $(BASEDIR)/component/common/application/matter/bluetooth
 MBEDDIR = $(BASEDIR)/component/common/application/matter/mbedtls
 PORTDIR = $(BASEDIR)/component/common/application/matter/port
 PROTOBUFDIR = $(BASEDIR)/component/common/application/matter/protobuf
@@ -28,11 +28,12 @@ vpath %.c $(DIR) $(shell find $(DIR) -type d)
 # Source file list
 # -------------------------------------------------------------------
 CSRC += $(ATCMDDIR)/atcmd_matter.c
-CSRC += $(BTDIR)/bt_matter_adapter_app_main.c
-CSRC += $(BTDIR)/bt_matter_adapter_app_task.c
-CSRC += $(BTDIR)/bt_matter_adapter_peripheral_app.c
-CSRC += $(BTDIR)/bt_matter_adapter_service.c
-CSRC += $(BTDIR)/bt_matter_adapter_wifi.c
+CSRC += $(BTDIR)/matter_blemgr_common.c
+#CSRC += $(BTDIR)/bt_matter_adapter_app_main.c
+#CSRC += $(BTDIR)/bt_matter_adapter_app_task.c
+#CSRC += $(BTDIR)/bt_matter_adapter_peripheral_app.c
+#CSRC += $(BTDIR)/bt_matter_adapter_service.c
+#CSRC += $(BTDIR)/bt_matter_adapter_wifi.c
 CSRC += $(MBEDDIR)/net_sockets.c
 CSRC += $(PORTDIR)/matter_dcts.c
 CSRC += $(PORTDIR)/matter_ota.c
